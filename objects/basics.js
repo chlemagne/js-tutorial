@@ -13,3 +13,5 @@ const circle = {
 }
 
 console.log(circle.diameter())
+
+console.log(circle.constructor) // [Function: Object]

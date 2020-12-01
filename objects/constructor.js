@@ -26,3 +26,11 @@ console.log(circle.isVisible)
 // delete keyword does not violate the ``const`` access modifier
 delete circle.isVisible
 console.log(circle.isVisible)
+
+console.log(circle.constructor) // [Function: Circle]
+console.log(Circle.constructor) // [Function: Function]
+
+const empty = {};
+const empty2 = new Object();
+console.log(empty.constructor);     // [Function: Object]
+console.log(empty2.constructor);    // [Function: Object]

@@ -18,3 +18,6 @@ function createCircle(radius) {
 const circle = createCircle(12);
 console.log(circle.radius);
 console.log(circle.diameter())
+
+console.log(circle.constructor)         // [Function: Object]
+console.log(createCircle.constructor)   // [Function: Function]
