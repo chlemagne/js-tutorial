@@ -22,3 +22,7 @@ console.log(circle.diameter())
 
 circle.isVisible = false;
 console.log(circle.isVisible)
+
+// delete keyword does not violate the ``const`` access modifier
+delete circle.isVisible
+console.log(circle.isVisible)
