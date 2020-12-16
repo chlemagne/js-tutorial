@@ -29,3 +29,13 @@ console.log(fruits.concat(vegies));
 // spread operator
 full = [...fruits, "chicken", "fish", "pork", ...vegies];
 console.log(full);
+
+// iterate through arrays
+// NOTE: using ``in`` operator will return the index (arrays) and keys (objects).
+for (let food of full)
+    console.log(food);
+
+// using .forEach() method
+console.log("###")
+full.forEach((value, index) => console.log(index, value));
+console.log("###")
