@@ -6,8 +6,6 @@ const courses = [
     { id: 3, name: 'c'}
 ];
 
-course = courses.find(function(course) {
-    return course.name === 'b';
-});
+course = courses.find(course => course.name === 'b');
 
 console.log(course);
