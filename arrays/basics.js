@@ -18,3 +18,14 @@ numbers = [1, 2, 3, 4, 5];
 // clear numbers
 numbers.length = 0;
 console.log(numbers); // []
+
+// concatenate arrays
+fruits = ["apple", "banana", "mango"];
+vegies = ["cucumber", "lettuce", "radish"];
+
+// [ 'apple', 'banana', 'mango', 'cucumber', 'lettuce', 'radish' ]
+console.log(fruits.concat(vegies));
+
+// spread operator
+full = [...fruits, "chicken", "fish", "pork", ...vegies];
+console.log(full);
