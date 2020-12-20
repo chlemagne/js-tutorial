@@ -45,3 +45,6 @@ integers = [-2, -1, 0, 1, 2]
 
 const allPositive = integers.every(number => number > 0);  // false
 const somePositive = integers.some(number => number > 0);  // true
+
+// filter array elements
+const positiveIntegers = integers.filter(n => n >= 0);  // [ 0, 1, 2 ]
