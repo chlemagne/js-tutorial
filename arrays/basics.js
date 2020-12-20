@@ -65,3 +65,14 @@ const chained = integers
     .filter(obj => obj.number > 1)
     .map(obj => "Number " + obj.number.toString(BASE_10));
 // chained is logged as [ 'Number 2', 'Number 3', 'Number 4', 'Number 5' ]
+
+// reduce an array; find the sum of variable ``chained``
+const INITIAL_VALUE = 0;
+const RE_PATTERN = /Number\s(-?\d+)/;
+const sum = chained.reduce((prev, curr) => {
+    match = curr.match(RE_PATTERN);
+    number = (match.length > 0) ? match[1] : 0;
+    return prev + parseInt(number);
+},
+INITIAL_VALUE);
+console.log(sum);
