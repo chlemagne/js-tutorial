@@ -41,7 +41,7 @@ full.forEach((value, index) => console.log(index, value));
 console.log("###")
 
 // .every() and .some() methods
-const integers = [-2, -1, 0, 1, 2]
+const integers = [-2, -1, 0, 1, 2, 3, 4, 5]
 
 const allPositive = integers.every(number => number > 0);  // false
 const somePositive = integers.some(number => number > 0);  // true
@@ -56,3 +56,12 @@ function Integer(number) {
 // when using object literal syntax {}, enclose it with parenthesis like below.
 // const integersObj = integers.map(n => ({ number: n}));
 const integersObj = integers.map(n => new Integer(n));
+
+// chain .filter() and .map() methods
+const BASE_10 = 10;
+const chained = integers
+    .filter(n => n >= 0)
+    .map(n => new Integer(n))
+    .filter(obj => obj.number > 1)
+    .map(obj => "Number " + obj.number.toString(BASE_10));
+// chained is logged as [ 'Number 2', 'Number 3', 'Number 4', 'Number 5' ]
