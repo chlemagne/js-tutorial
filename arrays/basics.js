@@ -13,21 +13,21 @@
 
 // To empty clear/empty an array, there are four (4) solutions;
 // the best solution is shown below. Others have quirks and others are long/messy.
-numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
 
 // clear numbers
 numbers.length = 0;
 console.log(numbers); // []
 
 // concatenate arrays
-fruits = ["apple", "banana", "mango"];
-vegies = ["cucumber", "lettuce", "radish"];
+const fruits = ["apple", "banana", "mango"];
+const vegies = ["cucumber", "lettuce", "radish"];
 
 // [ 'apple', 'banana', 'mango', 'cucumber', 'lettuce', 'radish' ]
 console.log(fruits.concat(vegies));
 
 // spread operator
-full = [...fruits, "chicken", "fish", "pork", ...vegies];
+const full = [...fruits, "chicken", "fish", "pork", ...vegies];
 console.log(full);
 
 // iterate through arrays
