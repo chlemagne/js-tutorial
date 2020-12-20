@@ -39,3 +39,9 @@ for (let food of full)
 console.log("###")
 full.forEach((value, index) => console.log(index, value));
 console.log("###")
+
+// .every() and .some() methods
+integers = [-2, -1, 0, 1, 2]
+
+const allPositive = integers.every(number => number > 0);  // false
+const somePositive = integers.some(number => number > 0);  // true
