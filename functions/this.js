@@ -18,10 +18,8 @@ const video = {
     title: 'Underworld',
     genre: ['Action', 'Thriller', 'Romance'],
     showGenre() {
-        // use .bind() method
-        this.genre.forEach(function(genre) {
-            console.log(`${this.title}: ${genre}`);
-        }.bind(this));
+        // (ES6) arrow function inherits ``this``
+        this.genre.forEach(genre => console.log(`${this.title}: ${genre}`));
     }
 };
 
