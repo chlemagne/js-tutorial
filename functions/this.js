@@ -18,10 +18,10 @@ const video = {
     title: 'Underworld',
     genre: ['Action', 'Thriller', 'Romance'],
     showGenre() {
-        const self = this;
+        // use .bind() method
         this.genre.forEach(function(genre) {
-            console.log(`${self.title}: ${genre}`);
-        })
+            console.log(`${this.title}: ${genre}`);
+        }.bind(this));
     }
 };
 
@@ -29,3 +29,20 @@ const video = {
 // Underworld: Thriller
 // Underworld: Romance
 video.showGenre();
+
+// JS Function .call(), .apply(), and .bind() methods
+// NOTE: a JS function is an object; hence, it has methods.
+function playVideo(startTime, playSpeed) {
+    console.log(
+        `Playing <${this.title}> starting at <${startTime}> at speed <${playSpeed}>`);
+}
+
+// Playing <Naruto> starting at <00:00:30> at speed <1.5x>
+playVideo.call({ title: `Naruto` }, `00:00:30`, `1.5x`);
+
+// Playing <One Piece> starting at <00:01:00> at speed <1x>
+playVideo.apply({ title: `One Piece` }, [`00:01:00`, `1x`]);
+
+// Playing <Fairy Tail> starting at <00:00:30> at speed <1.5x>
+const fairyTail = playVideo.bind({ title: `Fairy Tail` }, `00:00:30`, `1.5x`);
+fairyTail();
