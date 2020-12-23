@@ -18,15 +18,14 @@ const video = {
     title: 'Underworld',
     genre: ['Action', 'Thriller', 'Romance'],
     showGenre() {
+        const self = this;
         this.genre.forEach(function(genre) {
-            // NOTE: ``this`` below follows Rule#2 since it belongs to a
-            // a function. Hence, ``this.title`` returns ``undefined``.
-            console.log(`${this.title}: ${genre}`);
+            console.log(`${self.title}: ${genre}`);
         })
     }
 };
 
-// undefined: Action
-// undefined: Thriller
-// undefined: Romance
+// Underworld: Action
+// Underworld: Thriller
+// Underworld: Romance
 video.showGenre();
