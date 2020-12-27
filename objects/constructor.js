@@ -2,6 +2,8 @@
 
 function Circle(radius) {
     this.radius = radius;
+    let x = 0;
+    let y = 0;
     this.diameter = function () {
         return 2 * this.radius;
     }
@@ -10,6 +12,13 @@ function Circle(radius) {
     }
     this.isCopyOf = function(other) {
         return this === other;
+    }
+    let computeOptimumLocation = function(factor) {
+        // pass
+    }
+    this.draw = function() {
+        computeOptimumLocation(0.1);
+        console.log(`Drawing at (${x}, ${y}) with radius ${this.radius}.`)
     }
 
     // JS automatically calls line below
