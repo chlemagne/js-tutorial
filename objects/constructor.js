@@ -20,6 +20,16 @@ function Circle(radius) {
         computeOptimumLocation(0.1);
         console.log(`Drawing at (${x}, ${y}) with radius ${this.radius}.`)
     }
+    Object.defineProperty(this, "x", {
+        get: function() {
+            return x;
+        }
+    });
+    Object.defineProperty(this, "y", {
+        get: function() {
+            return y;
+        }
+    });
 
     // JS automatically calls line below
     // return this;
