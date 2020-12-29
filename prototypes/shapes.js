@@ -1,5 +1,11 @@
 // JS Prototype Demo
 
+// Intermediate Function Inheritance
+function extend(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.constructor = Child;
+}
+
 // Shape object
 function Shape(color) {
     this.color = color;
@@ -19,8 +25,7 @@ function Circle(radius, color) {
 }
 
 // Circle object extends Shape object
-Circle.prototype = Object.create(Shape.prototype);
-Circle.prototype.constructor = Circle;
+extend(Circle, Shape);
 
 // Add method to Circle.prototype
 Circle.prototype.draw = function() {
