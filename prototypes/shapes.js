@@ -27,6 +27,15 @@ function Circle(radius, color) {
 // Circle object extends Shape object
 extend(Circle, Shape);
 
+// override Shape.prototype.duplicate method
+// NOTE: method override should be declared AFTER extend(). Otherwise,
+//       it has no effect as prototype is reset during extend().
+Circle.prototype.duplicate = function() {
+    Shape.prototype.duplicate.call(this); // call super method
+
+    console.log(`<${this.radius}>, <${this.color}>`);
+}
+
 // Add method to Circle.prototype
 Circle.prototype.draw = function() {
     console.log(`Drawing a circle with radius <${this.radius}>...`);
