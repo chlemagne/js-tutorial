@@ -33,10 +33,51 @@ extend(Circle, Shape);
 Circle.prototype.duplicate = function() {
     Shape.prototype.duplicate.call(this); // call super method
 
-    console.log(`<${this.radius}>, <${this.color}>`);
+    console.log(`Circle: <${this.radius}>, <${this.color}>`);
 }
 
 // Add method to Circle.prototype
 Circle.prototype.draw = function() {
     console.log(`Drawing a circle with radius <${this.radius}>...`);
+}
+
+// Square object
+function Square(side, color) {
+    Shape.call(this, color); // super constructor
+
+    this.side = side;
+}
+
+// Circle object extends Shape object
+extend(Square, Shape);
+
+// override Shape.prototype.duplicate method
+// NOTE: method override should be declared AFTER extend(). Otherwise,
+//       it has no effect as prototype is reset during extend().
+Square.prototype.duplicate = function() {
+    Shape.prototype.duplicate.call(this); // call super method
+
+    console.log(`Square: <${this.side}>, <${this.color}>`);
+}
+
+// Add method to Circle.prototype
+Square.prototype.draw = function() {
+    console.log(`Drawing a square with side <${this.side}>...`);
+}
+
+
+// Polymorphism demo
+const shapes = [
+    new Circle(5, "green"),
+    new Square(2.5, "blue")
+];
+
+for (let shape of shapes) {
+    /*
+        Duplicating shape...
+        Circle: <5>, <green>
+        Duplicating shape...
+        Square: <2.5>, <blue>
+    */
+    shape.duplicate();
 }
