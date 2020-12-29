@@ -1,7 +1,8 @@
 // JS Prototype Demo
 
 // Shape object
-function Shape() {
+function Shape(color) {
+    this.color = color;
 }
 
 // Shape.prototype members ares ``static`` and ``class``
@@ -11,7 +12,9 @@ Shape.prototype.duplicate = function() {
 }
 
 // Circle object
-function Circle(radius) {
+function Circle(radius, color) {
+    Shape.call(this, color); // super constructor
+
     this.radius = radius;
 }
 
