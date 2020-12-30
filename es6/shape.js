@@ -36,6 +36,12 @@ class Circle extends Shape {
     get diameter() {
         return 2 * _radius.get(this);
     }
+
+    // Override super move() method
+    move() {
+        super.move();
+        console.log(`Moving circle with radius <${this.radius}>...`);
+    }
 }
 
 // ES6 class static method demo
