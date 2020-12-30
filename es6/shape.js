@@ -12,4 +12,13 @@ class Shape {
     move() {
         console.log(`Moving shape with color <${this.color}>...`);
     }
+
+    // JS static method
+    static parse(json) {
+        const color = JSON.parse(json).color;
+        return new Shape(color);
+    }
 }
+
+// ES6 class static method demo
+const s = Shape.parse('{ "color": "yellow" }');
