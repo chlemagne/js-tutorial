@@ -22,8 +22,30 @@ class Shape {
     }
 }
 
+/*
+    To import ``Circle`` object in other modules, use the syntax below:
+
+    ++ index.js
+    import {Circle} from './circle';
+
+    WARNING: Without using Webpack, index.js will catch
+             ``SyntaxError: Unexpected token {``. Webpack should be
+             used to fix this issue. As a development workaround,
+             use the ff:
+
+             ++ index.html
+             <script type="module" src="index.js"></script>
+
+             In addition, another error will appear
+             ``GET http://localhost:8080/circle net::ERR_ABORTED``.
+             Basically, JS could not resolve the filepath ``./circle``.
+             Again, as a development workaround, use the ff:
+
+             ++ index.js
+             import {Circle} from './circle.js';
+*/
 // Shape child class
-class Circle extends Shape {
+export class Circle extends Shape {
     constructor(color, radius) {
         super(color);
         _radius.set(this, radius);
