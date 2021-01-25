@@ -13,3 +13,10 @@ enum Color {
     Blue = 2
 };
 let foregroundColor = Color.Green;
+
+// Type assertions
+let message;
+message = 'hello, world!';
+
+const endsWithC = (<string>message).endsWith('c');      // true
+const endsWithD = (message as string).endsWith('d');    // false
