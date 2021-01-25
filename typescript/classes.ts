@@ -1,14 +1,7 @@
 // Typescript Classes
 
 class Point {
-    private x: number;
-    private y: number;
-    private isMidpoint: boolean;
-
-    constructor(x: number, y: number, isMidpoint?: boolean) {
-        this.x = x;
-        this.y = y;
-        this.isMidpoint = isMidpoint;
+    constructor(private x: number, private y: number, private isMidpoint?: boolean) {
     }
 
     draw() {
