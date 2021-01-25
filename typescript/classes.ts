@@ -1,6 +1,6 @@
 // Typescript Classes
 
-class Point {
+export class Point {
     constructor(private _x: number, private _y: number, private _isMidpoint?: boolean) {
     }
 
